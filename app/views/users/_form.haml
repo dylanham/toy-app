@@ -1,0 +1,9 @@
+= form_for @user do |f|
+  = f.label :name
+  = f.text_field :name
+  .div
+    = f.label :email
+    = f.text_field :email
+  .div
+    = f.submit
+= link_to 'Back', users_path
