@@ -1,5 +1,5 @@
 class MicroPostsController < ApplicationController
-  before_action :set_micropost, only: [:show, :edit, :update]
+  before_action :set_micro_post, only: [:show, :edit, :update]
   def index
     @micro_posts = MicroPost.all
   end
@@ -34,8 +34,8 @@ class MicroPostsController < ApplicationController
   end
 
   def destroy
-    micropost = MicroPost.find(params([:id])
-    micropost.destroy
+    micro_post = MicroPost.find(params[:id])
+    micro_post.destroy
     flash[:notice] = "Post sucessfully deleted"
     redirect_to micro_posts_path
   end
@@ -43,11 +43,11 @@ class MicroPostsController < ApplicationController
   private
 
   def micro_post_params
-    params.require(:micro_post).permit(:content, :user_id)
+    params.require(:micro_post).permit(:content,:user_id)
   end
 
   def set_micro_post
     @micro_post = MicroPost.find(params[:id])
   end
-  
+
 end

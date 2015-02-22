@@ -8,5 +8,9 @@
     = csrf_meta_tags
   %body
     - if flash[:notice]
-      = flash[:notice]
+      %p.notice= flash[:notice]
     = yield
+    %footer
+      = link_to "Users", users_path
+      |
+      = link_to "Posts", micro_posts_path

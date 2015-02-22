@@ -1,0 +1,11 @@
+.div
+  = link_to 'New Post', new_micro_post_path
+  %hr
+- @micro_posts.each do |post|
+  %p
+    = link_to'Post:', micro_post_path(post)
+    = post.content
+  %p
+    = link_to 'edit', edit_micro_post_path(post)
+    = link_to 'delete', micro_post_path(post), method: :delete, data:{confirm: "Are you sure?"}
+  %hr

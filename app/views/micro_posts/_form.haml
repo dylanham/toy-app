@@ -1,0 +1,13 @@
+- if @micro_post.errors.any?
+  - @micro_post.errors.full_messages.each do |message|
+    %p.error= message
+= form_for @micro_post do |f|
+  = f.label :content
+  .div
+    = f.text_area :content
+  .div
+    = f.label :user_id
+    = f.number_field :user_id
+  .div
+    = f.submit
+%hr
